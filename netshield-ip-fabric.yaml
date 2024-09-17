@@ -2,7 +2,6 @@ version: "3.5"
 services:
   vm_box:
     command:
-      - bash -c sed -i '/neighbor fabric capability extended-nexthop/ {a\
-        neighbor fabric ebgp-multihop 64
-        }' /opt/ispsystem/vm/scripts/kvm/etc/frr_routereflector_bgpd.tmpl
-      - /entrypoint.sh sh -c /supervisor.sh
+    - bash
+    - -c
+    - sed -i -E "s/(neighbor fabric capability extended-nexthop)/\1\n neighbor fabric ebgp-multihop 255/;s/(neighbor fabric route-map IPV4_EXPORT out)/\1\n  neighbor fabric route-map IPV4_IMPORT in/;s/(neighbor fabric route-map IPV6_EXPORT out)/\1\n  neighbor fabric route-map IPV6_IMPORT in/;s/(route-map IPV4_EXPORT permit 5)/route-map IPV4_IMPORT permit 5\n\!\n\1/;s/(route-map IPV6_EXPORT permit 5)/route-map IPV6_IMPORT permit 5\n\!\n\1/" /opt/ispsystem/vm/scripts/kvm/etc/frr_routereflector_bgpd.tmpl && /entrypoint.sh sh -c /supervisor.sh
