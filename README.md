@@ -13,3 +13,5 @@ Remove patch:
 vm remove-patch -p netshield-ip-fabric;
 rm -rf /opt/ispsystem/vm/netshield-ip-fabric.yaml;
 ```
+
+P.S ISPsystem's products are full of shit :-)
