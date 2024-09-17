@@ -4,4 +4,6 @@ services:
     command:
       - bash
       - -c
-      - 1
+      - sed -i '/neighbor fabric capability extended-nexthop/ {a\
+        neighbor fabric ebgp-multihop 64
+        }' /opt/ispsystem/vm/scripts/kvm/etc/frr_routereflector_bgpd.tmpl
