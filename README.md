@@ -1,2 +1,1 @@
-# ip-fabric
-patch ip-fabric for VM6
+IP-Fabric path for VMManager 6
