@@ -14,4 +14,5 @@ vm remove-patch -p netshield-ip-fabric;
 rm -rf /opt/ispsystem/vm/netshield-ip-fabric.yaml;
 ```
 
-P.S ISPsystem's products are full of shit :-)
+---------
+P.S Уважаемая компания Ispsystem поднимите жопу и сделайте настройку BGP из панели. Добавить кнопку для ebgp-multihop не трудно. 
